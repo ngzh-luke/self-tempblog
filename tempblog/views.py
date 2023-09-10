@@ -5,6 +5,11 @@ from flask import render_template, Blueprint, request, redirect, url_for, sessio
 views = Blueprint('views', __name__)
 
 
+@views.route('/')
+def viewIndex(e):
+    return redirect("https://www.lukecreated.com/comingsoon.html")
+
+
 @views.route('/1/')
 def renderUPsView():
     return render_template("ups2023.html")

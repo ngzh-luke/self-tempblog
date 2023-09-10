@@ -8,8 +8,8 @@ edit = Blueprint('edit', __name__)
 @edit.route('/')
 def func():
     session.clear()
-    flash('Please login again to access customized surprise present!',
-          category='logout')
+    flash('Not yet available!',
+          category='warning')
     # return redirect(url_for('auth.logIn'))
     # return redirect("https://devzone.lukecreated.com/")
-    return "you are being redirected"
+    return "Content is not available"

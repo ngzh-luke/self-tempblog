@@ -1,7 +1,7 @@
 # root file of the app where the root config is happen here
 
 # from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, Blueprint, render_template, abort, flash, session
+from flask import Flask, Blueprint, render_template, abort, flash, session, redirect
 from decouple import config as en_var  # import the environment var
 from datetime import timedelta
 
@@ -32,28 +32,11 @@ def createApp():
 
     from .views import views
     from .edit import edit
-    # from .features import features
-    # from .accountMng import account
-    # from ._ss_ import acc_security
-    # from .customizedView import cusViews
     app.register_blueprint(rootView, url_prefix='/')
     app.register_blueprint(views, url_prefix='/view')
     app.register_blueprint(edit, url_prefix='/edit')
     # app.register_blueprint(features, url_prefix='/')
-    # app.register_blueprint(account, url_prefix='/')
-    # app.register_blueprint(acc_security, url_prefix='/@system-@security-check')
-    # app.register_blueprint(cusViews, url_prefix='/')
-    # app.register_error_handler(404, notFound)
-
-    # with app.app_context(): # Drop all of the tables
-    #     db.drop_all()
-
-    # try:
-    #     with app.app_context():
-    #         db.create_all()
-    # except Exception as e:
-    #     db.session.rollback()
-    #     flash(f'{e}', category='error')
+    app.register_error_handler(404, notFound)
 
     # config the user session
 
@@ -61,19 +44,6 @@ def createApp():
     def before_request():
         session.permanent = True
         # session.modified = True # default set to true. Consult the lib to confirm
-
-    # login_manager = LoginManager()
-    # login_manager.login_view = 'auth.logIn'
-    # login_manager.refresh_view = 'auth.logIn'
-    # login_manager.login_message_category = 'info'
-    # login_manager.needs_refresh_message_category = "info"
-    # login_manager.needs_refresh_message = "You have to login again to confirm your identity!"
-    # login_manager.init_app(app)
-
-    """ waiting to be config soon """
-    # @login_manager.user_loader
-    # def load_user(id):
-    #     return User.query.get(int(id))
 
     return app
 
@@ -97,24 +67,24 @@ class About():
         return str(self.version)
 
 
-systemInfoObject = About(version=0.1, status='Initial Development',
-                         build=20230808, version_note='app initiated')
+systemInfoObject = About(version=0.2, status='Initial Development#2',
+                         build=20230910, version_note='design display layout + error handling')
 systemInfo = systemInfoObject.__str__()
 systemVersion = systemInfoObject.getSystemVersion()
 
 rootView = Blueprint('rootView', __name__)
 
 
-# @rootView.route("/root-template-view/")
-# def root_view():
-#     if not current_user.is_authenticated:
-#         abort(401)  # unauthorized
-#     elif current_user.isMe == True:
-#         return render_template("root.html", user=current_user)
-#     else:
-#         abort(403)  # forbidden
+def notFound(e):
+    """ not found 404 """
+    return redirect("https://www.lukecreated.com/404.html")
+
+
+@rootView.route('/')
+def index():
+    return redirect("https://www.lukecreated.com/comingsoon.html")
+
 
 @rootView.route("/root-template-view/")
 def root_view():
-
     return render_template("root.html")
