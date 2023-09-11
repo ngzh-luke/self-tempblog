@@ -1,7 +1,7 @@
 # root file of the app where the root config is happen here
 
 # from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, Blueprint, render_template, abort, flash, session, redirect
+from flask import Flask, Blueprint, render_template, flash, session, redirect
 from decouple import config as en_var  # import the environment var
 from datetime import timedelta
 
@@ -21,9 +21,6 @@ def createApp():
     app.config['FLASK_ADMIN-SWATCH'] = 'cerulean'
     # Encrepted with Environment Variable
     app.config['SECRET_KEY'] = en_var('tempblog', 'tempblogsecret')
-    # app.config['DATABASE_NAME'] = DB_NAME
-    # app.config['SQLALCHEMY_DATABASE_URI'] = f'{DB_NAME}'
-    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['REMEMBER_COOKIE_SECURE'] = True
     # set session timeout (need to use with before_request() below)
     app.config['PERMANENT_SESSION_LIFETIME'] = TIMEOUT
@@ -67,8 +64,8 @@ class About():
         return str(self.version)
 
 
-systemInfoObject = About(version=0.2, status='Initial Development#2',
-                         build=20230910, version_note='design display layout + error handling')
+systemInfoObject = About(version=0.3, status='Initial Development#3',
+                         build=20230911, version_note='bugs fixed + add index')
 systemInfo = systemInfoObject.__str__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -82,7 +79,7 @@ def notFound(e):
 
 @rootView.route('/')
 def index():
-    return redirect("https://www.lukecreated.com/comingsoon.html")
+    return render_template("index.html")
 
 
 @rootView.route("/root-template-view/")

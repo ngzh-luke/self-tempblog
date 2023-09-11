@@ -1,13 +1,13 @@
 # display the certain blog post that users will see when requested in certain url
 
-from flask import render_template, Blueprint, request, redirect, url_for, session, abort, flash
+from flask import render_template, Blueprint, request, redirect, url_for, session, flash
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
-def viewIndex(e):
-    return redirect("https://www.lukecreated.com/comingsoon.html")
+def viewIndex():
+    return redirect(url_for('rootView.index'))
 
 
 @views.route('/1/')
