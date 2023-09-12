@@ -8,49 +8,42 @@
   </head>
   <body>
     {% block body %}
-    <div id="another-blog" class="py-1 mx-3 my-3" align="center">
+    <div id="blogxIndex" class="px-2 py-2 mx-5 my-5" align="center">
       <h1 style="font-size: xx-large">LukeCreated Blogs - Index</h1>
       <br />
-      <a
-        class="btn btn-primary"
-        type="button"
-        style="color: greenyellow"
-        href="https://blogs.lukecreated.com/view/1"
-        >UPs+ Spring Program 2023 in Taiwan</a
-      >
-      <br />
-      <a
-        class="btn btn-primary"
-        type="button"
-        style="color: greenyellow"
-        href="https://blogs.lukecreated.com/view/2"
-        >ASEAN+3 Mobility Program 2023 EP.01 - Taiwan</a
-      >
+
+      <table class="table table-warning table-hover border border-3">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Last updated</th>
+            <th scope="col">By</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="table-success"
+            onclick="window.location='https://blogs.lukecreated.com/view/1';"
+          >
+            <th scope="row">1</th>
+            <td>UPs+ Spring Program 2023 in Taiwan</td>
+            <td>September 13, 2023</td>
+            <td>Luke</td>
+          </tr>
+
+          <tr
+            class="table-primary"
+            onclick="window.location='https://blogs.lukecreated.com/view/2';"
+          >
+            <th scope="row">2</th>
+            <td>ASEAN+3 Mobility Program 2023 EP.01 - Taiwan</td>
+            <td>September 13, 2023</td>
+            <td>Luke</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="table-success">
-          <th scope="row">1</th>
-          <td>row</td>
-          <td>row</td>
-          <td>row</td>
-        </tr>
-        <tr class="table-primary">
-          <th scope="row">2</th>
-          <td>row</td>
-          <td>row</td>
-          <td>row</td>
-        </tr>
-      </tbody>
-    </table>
     {% endblock %}
   </body>
 </html>

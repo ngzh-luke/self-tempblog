@@ -6,6 +6,23 @@
     <title>LC Blogs: UPs+ Spring Program 2023</title>
     {% extends 'root.html' %}
   </head>
+  <style>
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .embed-container iframe,
+    .embed-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
   <body>
     {% block body %}
     <br />
@@ -15,20 +32,22 @@
       </h1>
       <h2>Blogs: UPs+ Spring Program 2023 in Taiwan</h2>
       <hr class="my-1" />
-      <div class="mx-2 my-2" style="color: crimson" id="metaData">
+      <article class="mx-2 my-2" style="color: crimson" id="metaData">
         <span style="font-weight: bold">Content Info:</span>
         <ul>
           <li>Writen by: KITTIPICH "Luke" AIUMBHORNSIN</li>
           <li>Content last updated on: MAY 21, 2023</li>
           <li>Content available in: English</li>
+          <li>Blog last updated: September 13, 2023</li>
         </ul>
         <a
           style="color: green"
           href="https://drive.google.com/drive/folders/1tFzAWS_7SMjLdvzQW5Y38LN-upwSgswI?usp=sharing"
           target="_blank"
           ><u>Click to see Pictures & Videos</u></a
-        >
-      </div>
+        ><br />
+        <a href="#vlogs">Jump to Vlogs</a>
+      </article>
       <hr />
       <div id="another-blog" class="py-1" align="center">
         You might interest in... <br />
@@ -42,6 +61,22 @@
       </div>
       <hr />
       <article class="mx-2 my-2 px-2 py-2" style="font-size: larger">
+        <div align="center" class="embed-container">
+          <img
+            class="image"
+            src="{{url_for('static', filename='images/UPs+2023posterV3.jpeg')}}"
+            alt="poster"
+            loading="lazy"
+            height="auto"
+            width="365"
+          />
+          <br />
+          <small style="color: gray"
+            >UPs+2023 Poster summarize key points of the program.</small
+          >
+        </div>
+        <br />
+
         &ensp; &ensp; I have received a couple emails in February on exchange
         program in Taiwan. At that time, I thought this might be a good chance
         for me. Though, I looked at the emails and found out that most of them
@@ -53,6 +88,23 @@
         Fortunately, I found one email, I read it and consider whether do I
         qualified to apply, and the answer was ‘YES’, so I applied, and
         everything started here. <br />
+        <div align="center" class="embed-container">
+          <br />
+          <img
+            class="image"
+            src="{{url_for('static', filename='images/lukeAtMuseum.jpg')}}"
+            alt="lukeAtMuseum"
+            loading="lazy"
+            height="auto"
+            width="365"
+          />
+          <br />
+          <small style="color: gray"
+            >Me, at National Museum of Natural Science
+            (國立自然科學博物館).</small
+          >
+        </div>
+        <br />
         &ensp; &ensp;​The program was hosted by Mahidol University International
         Relations Division and Tunghai University in Taichung, Taiwan. After I
         have applied and got exchange quota confirmation on this exchange
@@ -62,6 +114,22 @@
         Relations Division and Teacher are ready to help every participant if
         there is any problem happened in any stage, from program registration to
         getting the certificate after back here in Thailand. <br />
+        <div align="center" class="embed-container">
+          <br />
+          <img
+            class="image"
+            src="{{url_for('static', filename='images/meAndFriendsAtHouFeng.jpg')}}"
+            alt="meAndFriendsAtHouFeng"
+            loading="lazy"
+            height="auto"
+            width="365"
+          />
+          <br />
+          <small style="color: gray"
+            >Me, and friends at HouFeng Bikeway (后豐鐵馬道).</small
+          >
+        </div>
+        <br />
         &ensp; &ensp; ​Once the plane was touched the Taiwan’s ground, I may now
         call the trip was officially began, I had to force myself to take off
         my- Thai-thinking brain and started to kick off the hidden
@@ -112,6 +180,22 @@
         planning to go ride bicycles at HouFeng Bikeway (后豐鐵馬道) in Taichung
         city. Rather than surviving in such a city, I would prefer to enjoy the
         gorgeous of nature along the Bikeway. <br />
+        <div align="center" class="embed-container">
+          <br />
+          <img
+            class="image"
+            src="{{url_for('static', filename='images/viewAtGaomei.jpg')}}"
+            alt="viewAtGaomei"
+            loading="lazy"
+            height="auto"
+            width="365"
+          />
+          <br />
+          <small style="color: gray"
+            >A beautiful sunset at Gaomei Wetlands (高美溼地).</small
+          >
+        </div>
+        <br />
         &ensp; &ensp; ​Unfortunately, time gone fast, and it was the time to
         head back to our motherland after around 10 days of spending, however,
         in my opinion, trip to Taiwan this time was more than ‘worth’ and
@@ -120,6 +204,20 @@
         is whether deciding going exchange or not or whether hesitating to
         exchange to Taiwan or someplace else, I would cheer you click apply on
         the exchange program and personally suggest Taiwan as a destination.
+        <br />
+        <div align="center" class="embed-container">
+          <br />
+          <img
+            class="image"
+            src="{{url_for('static', filename='images/teaCeremony.jpg')}}"
+            alt="teaCeremony"
+            loading="lazy"
+            height="auto"
+            width="365"
+          />
+          <br />
+          <small style="color: gray">Tea ceremony.</small>
+        </div>
         <br />
         &ensp; &ensp; With the chances to explore and attempt to understand
         diversity of the cultures can help we as a part of this world live more
@@ -147,6 +245,53 @@
           >Click here!</a
         >
       </p>
+      <div class="my-3" style="color: brown" id="vlogs">
+        <div class="embed-container">
+          P.S.III My friends' Vlogs on the program:
+          <ul>
+            <li>
+              <iframe
+                id="vdo-oum1"
+                src="https://www.youtube.com/embed/-9-LPAqxkIY"
+                title="Vlog Day1 in Taiwan with Mahidol University students"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </li>
+            <li>
+              <iframe
+                id="vdo-oum2"
+                src="https://www.youtube.com/embed/lb-dE6YmM8c"
+                title="Survive &amp; Study in Taiwan: Vlog 2 : Day 2-4"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </li>
+            <li>
+              <iframe
+                id="vdo-jah1"
+                src="https://www.youtube.com/embed/fSwvd8UtHsE"
+                title="Taiwan Vlog EP.1 | นักเรียนแลกเปลี่ยนได้มาเรียนที่ไต้หวัน🙍🏻‍♀️🇹🇼"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </li>
+            <li>
+              <iframe
+                id="vdo-jah2"
+                src="https://www.youtube.com/embed/0Nj0CuyDY_Y"
+                title="Taiwan Vlog EP.2 | Night Markets in Taichung🙍🏻‍♀️🇹🇼"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </li>
+          </ul>
+        </div>
+      </div>
       KITTIPICH AIUMBHORNSIN <br />
       FACULTY OF INFORMATION AND COMMUNICATION TECHNOLOGY, MAHIDOL UNIVERSITY
       <br />
