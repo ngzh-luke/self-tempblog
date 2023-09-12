@@ -1,7 +1,7 @@
 # root file of the app where the root config is happen here
 
 # from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, Blueprint, render_template, flash, session, redirect
+from flask import Flask, Blueprint, render_template, redirect
 from decouple import config as en_var  # import the environment var
 from datetime import timedelta
 
@@ -18,12 +18,11 @@ except:
 
 def createApp():
     app = Flask(__name__)
-    app.config['FLASK_ADMIN-SWATCH'] = 'cerulean'
     # Encrepted with Environment Variable
     app.config['SECRET_KEY'] = en_var('tempblog', 'tempblogsecret')
     app.config['REMEMBER_COOKIE_SECURE'] = True
     # set session timeout (need to use with before_request() below)
-    app.config['PERMANENT_SESSION_LIFETIME'] = TIMEOUT
+    # app.config['PERMANENT_SESSION_LIFETIME'] = TIMEOUT
     app.config['TIMEZONE'] = 'Asia/Bangkok'
     app.config['SERVER_NAME'] = DOMAIN or "indev.lukecreated.com"
 
@@ -34,13 +33,6 @@ def createApp():
     app.register_blueprint(edit, url_prefix='/edit')
     # app.register_blueprint(features, url_prefix='/')
     app.register_error_handler(404, notFound)
-
-    # config the user session
-
-    @app.before_request
-    def before_request():
-        session.permanent = True
-        # session.modified = True # default set to true. Consult the lib to confirm
 
     return app
 

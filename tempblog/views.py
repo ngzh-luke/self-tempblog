@@ -1,6 +1,6 @@
 # display the certain blog post that users will see when requested in certain url
 
-from flask import render_template, Blueprint, request, redirect, url_for, session, flash
+from flask import render_template, Blueprint, request, redirect, url_for
 
 views = Blueprint('views', __name__)
 
@@ -18,4 +18,3 @@ def renderUPsView():
 @views.route('/2/')
 def renderASEANview():
     return render_template("asean2023.html")
-    # return redirect('https://google.com')
