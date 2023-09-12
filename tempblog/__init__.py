@@ -56,8 +56,8 @@ class About():
         return str(self.version)
 
 
-systemInfoObject = About(version=0.4, status='Initial Development#4',
-                         build=20230913, version_note='UPs+ blog is done')
+systemInfoObject = About(version=0.43, status='Initial Development#5',
+                         build=20230913, version_note='overall improvements + ASEAN blog is draft')
 systemInfo = systemInfoObject.__str__()
 systemVersion = systemInfoObject.getSystemVersion()
 
