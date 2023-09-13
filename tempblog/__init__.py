@@ -56,8 +56,8 @@ class About():
         return str(self.version)
 
 
-systemInfoObject = About(version=0.5, status='Initial Development#6',
-                         build=20230913, version_note='ASEAN blog is done')
+systemInfoObject = About(version=0.52, status='Publicly deployed',
+                         build=20230913, version_note='bug fixed and improvements')
 systemInfo = systemInfoObject.__str__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -71,7 +71,7 @@ def notFound(e):
 
 @rootView.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", info=systemInfo)
 
 
 @rootView.route("/root-template-view/")
